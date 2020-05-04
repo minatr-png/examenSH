@@ -1,3 +1,5 @@
 read -p "Dime el directorio donde quieres buscar: " dir
 
-ls $dir
+for i in `ls -l $dir | awk '{print $1}'`; do
+	echo `$i | head -1`
+done
